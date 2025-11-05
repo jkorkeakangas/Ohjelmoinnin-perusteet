@@ -26,19 +26,23 @@ def main():
         varaus = f.read().strip()
 
     # Pilkotaan kentät
-    (varausnumero, varaaja, paiva, aika, tunnit, tuntihinta, maksettu, kohde, puhelin, sahkoposti) = varaus.split("|")    
+    varaus = varaus.split("|")    
 
     # Muutetaan tiedot
 
-    varausnumero = int(varausnumero)
-    paiva = datetime.strptime(paiva, "%Y-%m-%d").date()
+    varausnumero = int(varaus[0])
+    varaaja = varaus[1]
+    paiva = datetime.strptime(varaus[2], "%Y-%m-%d").date()
     suomalainenPaiva = paiva.strftime("%d.%m.%Y")
-    aika = datetime.strptime(aika, "%H:%M").time()
+    aika = datetime.strptime(varaus[3], "%H:%M").time()
     suomalainenAika = aika.strftime("%H.%M")
-    tuntimäärä = int(tunnit)
-    tuntihinta = float(tuntihinta)
+    tuntimäärä = int(varaus[4])
+    tuntihinta = float(varaus[5])
     kokonaishinta = tuntimäärä * tuntihinta
-    maksettuTekstina = "Kyllä" if maksettu.strip() == "True" else "Ei"
+    maksettuTekstina = "Kyllä" if varaus[6].strip() == "True" else "Ei"
+    kohde = varaus[7]
+    puhelin = varaus[8]
+    sahkoposti = varaus[9]
 
     # Tulostetaan varaus konsoliin
     print(f"Varausnumero: {varausnumero}")
