@@ -46,7 +46,7 @@ def main():
     print(f"Päivämäärä: {suomalainenPaiva}")
     print(f"Aloitusaika: {suomalainenAika}")
     print(f"Tuntimäärä: {tuntimäärä}")
-    print(f"Tuntihinta: {tuntihinta}")
+    print(f"Tuntihinta: {tuntihinta:.2f} €")
     print(f"Kokonaishinta: {kokonaishinta:.2f} €")
     print(f"Maksettu: {maksettuTekstina}")
     print(f"Kohde: {kohde}")
