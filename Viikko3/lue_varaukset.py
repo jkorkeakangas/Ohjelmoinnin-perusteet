@@ -40,7 +40,7 @@ def hae_aloitusaika(varaus):
     try:
         aika = datetime.strptime(ap_aika, "%H:%M").time()
         suomalainen_aika = aika.strftime("%H.%M")
-    except ValuError:
+    except ValueError:
         suomalainen_aika = ap_aika
     print(f"Aloitusaika: {suomalainen_aika}")
 
