@@ -123,7 +123,7 @@ def muodosta_viikkoraportti(viikko_numero: int, paivittaiset: Dict[date, List[fl
 
 def main():
     """
-    Ohjelman pääfunktio: käydään viikot läpi solmulla. Lasketaan datan sisältämät summat,
+    Ohjelman pääfunktio: käydään viikot läpi silmukalla. Lasketaan datan sisältämät summat,
     määritellään raportin sisältö ja muodostetaan niistä viikottaiset raporttitekstit
     Lopuksi kaikki kirjoitetaan yhteen tiedostoon yhteenveto.txt.
     """
