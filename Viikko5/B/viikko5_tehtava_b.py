@@ -54,7 +54,7 @@ def laske_paivittaiset_summat(data: List[list]) -> Dict[date, List[float]]:
     päivästä ja sille annetaan kuusi arvoa, jotka muutetaan kwh
     jakamalla 1000. Annetaan 0 arvo jokaiselle arvolle, jotta
     ei tapahdu virheitä uusien päivien kohdalla. Tuohon arvoon lisätään
-    kyseisen päivän oikea kulutus- tai tuotantoarvo-
+    kyseisen päivän oikea kulutus- tai tuotantoarvo.
     """
     paiva_summat: Dict[date, List[float]] = {}
 
@@ -106,7 +106,9 @@ def kirjoita_raportti(raporttiteksti: str):
 
 def muodosta_viikkoraportti(viikko_numero: int, paivittaiset: Dict[date, List[float]]) -> str:
     """
-    Luo yhden viikon raporttiosuuden tekstinä.
+    Luo yhden viikon raporttiosuuden tekstinä. Viikko_numero avulla saadaan viikot eroteltua.
+    Luodaan lista  pohjasta, johon lisätään sanakirjan kaikki avaimet. Lopuksi kaikki yhdistetään
+    ja palautetaan.
     """
     viikkoraporttirivit = []
     viikkoraporttirivit.append(f"Viikon {viikko_numero} sähkönkulutus ja -tuotanto (kWh, vaiheittain)\n")
